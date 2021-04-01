@@ -174,6 +174,8 @@
         "kind": "audio",
         "metadata": "",
         "name": "Laser-Shot.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
         "userAdded": true
       },
       {
@@ -262,6 +264,8 @@
         "kind": "audio",
         "metadata": "",
         "name": "Space-Cannon.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
         "userAdded": true
       },
       {
@@ -269,6 +273,8 @@
         "kind": "audio",
         "metadata": "",
         "name": "The-Creeping-Blob.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
         "userAdded": true
       },
       {
@@ -276,6 +282,8 @@
         "kind": "audio",
         "metadata": "",
         "name": "PowerRez9.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
         "userAdded": true
       },
       {
@@ -338,23 +346,282 @@
           "identifier": "https://resources.gdevelop-app.com/assets/Abstract Platformer Pack (370 assets)/PNG/Other/Red button_pressed.png",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "SNES - Contra 3 The Alien Wars - Alien Ship.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SNES - Contra 3 The Alien Wars - Alien Ship.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "SNES - Contra 3 The Alien Wars - Alien Ship2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SNES - Contra 3 The Alien Wars - Alien Ship2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "SNES-Contra3TheAlienWars-AlienShip2-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SNES-Contra3TheAlienWars-AlienShip2-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "SNES-Contra3TheAlienWars-AlienShip2-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SNES-Contra3TheAlienWars-AlienShip2-1-0.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
   },
-  "objects": [],
+  "objects": [
+    {
+      "name": "LevelDisplay",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b][outline=black][shadow=red]1[/shadow] [/outline] [/b]",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
+    },
+    {
+      "name": "Player",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "player1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bullet",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "behaviors": [
+        {
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 0
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "laserPlayer.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bold": true,
+      "italic": true,
+      "name": "GameOver",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "name": "GameOver",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "behaviors": [],
+      "string": "",
+      "font": "",
+      "characterSize": 50,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 255
+      }
+    },
+    {
+      "name": "ScoreDisplay",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b][outline=black][shadow=red]0[/shadow] [/outline] [/b]",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "Arial",
+        "align": "right",
+        "wordWrap": true
+      }
+    },
+    {
+      "name": "LifeDisplay",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b][outline=black][shadow=red]5[/shadow] [/outline] [/b]",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "Arial",
+        "align": "center",
+        "wordWrap": true
+      }
+    },
+    {
+      "name": "Shield",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "shield1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "objectsGroups": [],
   "variables": [
     {
       "name": "Life",
+      "type": "string",
       "value": ""
     },
     {
       "name": "Level",
+      "type": "string",
       "value": ""
     },
     {
       "name": "Score",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "Immortal",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "Pause",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "DevelopMode",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "Shield",
+      "type": "string",
       "value": ""
     }
   ],
@@ -380,6 +647,7 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": true,
         "windowMask": true,
@@ -701,30 +969,14 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 8,
         "snap": false,
         "windowMask": false,
         "zoomFactor": 1
       },
       "objectsGroups": [],
-      "variables": [
-        {
-          "name": "Immortal",
-          "value": ""
-        },
-        {
-          "name": "DevelopMode",
-          "value": ""
-        },
-        {
-          "name": "Pause",
-          "value": ""
-        },
-        {
-          "name": "Shield",
-          "value": ""
-        }
-      ],
+      "variables": [],
       "instances": [
         {
           "angle": 0,
@@ -743,6 +995,7 @@
           "initialVariables": [
             {
               "name": "Life",
+              "type": "string",
               "value": "3"
             }
           ]
@@ -764,6 +1017,7 @@
           "initialVariables": [
             {
               "name": "Life",
+              "type": "string",
               "value": ""
             }
           ]
@@ -793,8 +1047,8 @@
           "name": "ScoreDisplay",
           "persistentUuid": "39c46c90-70d0-4995-aa5a-3c18f6550064",
           "width": 0,
-          "x": 658,
-          "y": 42,
+          "x": 620,
+          "y": 35,
           "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
@@ -809,8 +1063,8 @@
           "name": "LevelDisplay",
           "persistentUuid": "c914f0e5-6411-4024-83c8-e78fe9bd2a57",
           "width": 0,
-          "x": 43,
-          "y": 40,
+          "x": 50,
+          "y": 35,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -825,8 +1079,8 @@
           "name": "LifeDisplay",
           "persistentUuid": "c60bac73-f271-49d2-86b1-02462a7fc7fe",
           "width": 0,
-          "x": 360,
-          "y": 39,
+          "x": 305,
+          "y": 35,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -874,45 +1128,6 @@
           ]
         },
         {
-          "name": "Player",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "player1.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "EnemyToPlayer",
           "tags": "",
           "type": "Sprite",
@@ -920,10 +1135,12 @@
           "variables": [
             {
               "name": "LifeEnemy",
+              "type": "string",
               "value": ""
             },
             {
               "name": "Variable",
+              "type": "string",
               "value": ""
             }
           ],
@@ -1012,90 +1229,6 @@
           ]
         },
         {
-          "name": "Bullet",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "behaviors": [
-            {
-              "name": "DestroyOutside",
-              "type": "DestroyOutsideBehavior::DestroyOutside",
-              "extraBorder": 0
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "laserPlayer.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Shield",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "shield1.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Enemy_Shoot",
           "tags": "",
           "type": "Sprite",
@@ -1133,81 +1266,6 @@
               ]
             }
           ]
-        },
-        {
-          "bold": true,
-          "italic": true,
-          "name": "GameOver",
-          "smoothed": true,
-          "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [
-            {
-              "name": "GameOver",
-              "value": ""
-            }
-          ],
-          "behaviors": [],
-          "string": "",
-          "font": "",
-          "characterSize": 50,
-          "color": {
-            "b": 0,
-            "g": 0,
-            "r": 255
-          }
-        },
-        {
-          "name": "ScoreDisplay",
-          "tags": "",
-          "type": "BBText::BBText",
-          "variables": [],
-          "behaviors": [],
-          "content": {
-            "text": "[b][outline=black][shadow=red]0[/shadow] [/outline] [/b]",
-            "opacity": 255,
-            "fontSize": 20,
-            "visible": true,
-            "color": "#ffffff",
-            "fontFamily": "Arial",
-            "align": "right",
-            "wordWrap": true
-          }
-        },
-        {
-          "name": "LevelDisplay",
-          "tags": "",
-          "type": "BBText::BBText",
-          "variables": [],
-          "behaviors": [],
-          "content": {
-            "text": "[b][outline=black][shadow=red]1[/shadow] [/outline] [/b]",
-            "opacity": 255,
-            "fontSize": 20,
-            "visible": true,
-            "color": "#ffffff",
-            "fontFamily": "Arial",
-            "align": "left",
-            "wordWrap": true
-          }
-        },
-        {
-          "name": "LifeDisplay",
-          "tags": "",
-          "type": "BBText::BBText",
-          "variables": [],
-          "behaviors": [],
-          "content": {
-            "text": "[b][outline=black][shadow=red]5[/shadow] [/outline] [/b]",
-            "opacity": 255,
-            "fontSize": 20,
-            "visible": true,
-            "color": "#ffffff",
-            "fontFamily": "Arial",
-            "align": "center",
-            "wordWrap": true
-          }
         }
       ],
       "events": [
@@ -1246,7 +1304,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -1305,7 +1363,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -1322,7 +1380,7 @@
               "parameters": [
                 "Level",
                 ">",
-                "4"
+                "10"
               ],
               "subInstructions": []
             }
@@ -1376,7 +1434,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -1448,7 +1506,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -1519,7 +1577,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -1548,7 +1606,7 @@
               "parameters": [
                 "Level",
                 ">",
-                "3"
+                "5"
               ],
               "subInstructions": []
             }
@@ -1866,6 +1924,18 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "1*GlobalVariable(Level)"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -1912,6 +1982,18 @@
                 "Shield"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "5*GlobalVariable(Level)"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -1956,6 +2038,18 @@
               "parameters": [
                 "Shield",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "2*GlobalVariable(Level)"
               ],
               "subInstructions": []
             }
@@ -2030,7 +2124,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "Shield",
@@ -2066,7 +2160,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Shield",
@@ -2391,6 +2485,18 @@
                 "\"FireRate\""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Level",
+                "<",
+                "10"
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -2405,17 +2511,6 @@
                 "Player.X()",
                 "Player.Y()",
                 ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"FireRate\""
               ],
               "subInstructions": []
             },
@@ -2444,6 +2539,129 @@
                 "no",
                 "2",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Space"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "0.3",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Level",
+                ">=",
+                "10"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "Player.X()",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+45)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+90)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Laser-Shot.mp3",
+                "no",
+                "2",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"FireRate\""
               ],
               "subInstructions": []
             }
@@ -2477,6 +2695,18 @@
                 "\"FireRate\""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Level",
+                "<",
+                "10"
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -2491,17 +2721,6 @@
                 "Player.X()",
                 "Player.Y()",
                 ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"FireRate\""
               ],
               "subInstructions": []
             },
@@ -2532,6 +2751,129 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Return"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "0.3",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Level",
+                ">=",
+                "10"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "Player.X()",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+45)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+90)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Laser-Shot.mp3",
+                "no",
+                "2",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -2550,7 +2892,7 @@
               "parameters": [
                 "Bullet",
                 "270",
-                "50*(GlobalVariable(Level)/2)",
+                "50*(GlobalVariable(Level))",
                 "1"
               ],
               "subInstructions": []
@@ -2580,7 +2922,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "Immortal",
@@ -2614,6 +2956,18 @@
                 "",
                 "10",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "5"
               ],
               "subInstructions": []
             }
@@ -2677,7 +3031,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "Immortal",
@@ -2697,6 +3051,18 @@
                 "Life",
                 "-",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "5"
               ],
               "subInstructions": []
             },
@@ -2774,7 +3140,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "Immortal",
@@ -2794,6 +3160,18 @@
                 "Life",
                 "-",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "5"
               ],
               "subInstructions": []
             },
@@ -2872,177 +3250,6 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarGlobal"
-              },
-              "parameters": [
-                "Score",
-                ">=",
-                "GlobalVariable(Level)*50"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Delete"
-              },
-              "parameters": [
-                "Enemy",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Delete"
-              },
-              "parameters": [
-                "EnemyToPlayer",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Delete"
-              },
-              "parameters": [
-                "Enemy_Shoot",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "Level",
-                "+",
-                "1"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "Score",
-                "=",
-                "0"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "Life",
-                "+",
-                "GlobalVariable(Level)"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"NewLevelTimer\""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "TextObject::String"
-              },
-              "parameters": [
-                "GameOver",
-                "=",
-                "\"Good Job!\nNew Level\""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Shield",
-                "+",
-                "1"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Timer"
-              },
-              "parameters": [
-                "",
-                "1.5",
-                "\"NewLevelTimer\""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "TextObject::String"
-              },
-              "parameters": [
-                "GameOver",
-                "=",
-                "\"\""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "RemoveTimer"
-              },
-              "parameters": [
-                "",
-                "\"NewLevelTimer\""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
                 "value": "DepartScene"
               },
               "parameters": [
@@ -3067,7 +3274,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Immortal",
@@ -3079,7 +3286,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -3091,7 +3298,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Pause",
@@ -3103,7 +3310,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Shield",
@@ -3159,6 +3366,177 @@
                 "GameOver",
                 "=",
                 "\"\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Score",
+                ">=",
+                "GlobalVariable(Level)*50"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "EnemyToPlayer",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy_Shoot",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Shield",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "+",
+                "2"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "GameOver",
+                "=",
+                "\"Good Job!\nNew Level\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"NewLevelTimer\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Level",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "1.5",
+                "\"NewLevelTimer\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "GameOver",
+                "=",
+                "\"\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "RemoveTimer"
+              },
+              "parameters": [
+                "",
+                "\"NewLevelTimer\""
               ],
               "subInstructions": []
             }
@@ -3315,7 +3693,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "Pause",
@@ -3369,7 +3747,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Pause",
@@ -3389,7 +3767,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "Pause",
@@ -3403,7 +3781,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Pause",
@@ -3423,7 +3801,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "Pause",
@@ -3591,7 +3969,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Shield",
@@ -3617,7 +3995,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Pause",
@@ -3629,7 +4007,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Immortal",
@@ -3641,7 +4019,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -3703,7 +4081,7 @@
               "parameters": [
                 "LifeDisplay",
                 "=",
-                "\"Life: \"+ GlobalVariableString(Life)+\" Shield: \"+VariableString(Shield)"
+                "\"Life: \"+ GlobalVariableString(Life)+\"\n Shield: \"+GlobalVariableString(Shield)"
               ],
               "subInstructions": []
             }
@@ -3754,12 +4132,24 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Immortal",
                 "+",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "GameOver",
+                "=",
+                "\"Immortal\""
               ],
               "subInstructions": []
             }
@@ -3795,7 +4185,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -3836,38 +4226,16 @@
                 ""
               ],
               "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+            },
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "TextObject::String"
               },
               "parameters": [
-                "Immortal",
-                ">",
-                "1"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Immortal",
+                "GameOver",
                 "=",
-                "0"
+                "\"Dev Mode\""
               ],
               "subInstructions": []
             }
@@ -3882,7 +4250,53 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Immortal",
+                ">",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Immortal",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "GameOver",
+                "=",
+                "\"\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
               },
               "parameters": [
                 "DevelopMode",
@@ -3896,12 +4310,24 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "DevelopMode",
                 "=",
                 "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "GameOver",
+                "=",
+                "\"\""
               ],
               "subInstructions": []
             }
@@ -3921,6 +4347,18 @@
               "parameters": [
                 "",
                 "Num2"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "DevelopMode",
+                "=",
+                "1"
               ],
               "subInstructions": []
             },
@@ -3983,6 +4421,18 @@
             {
               "type": {
                 "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "DevelopMode",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "BuiltinCommonInstructions::Once"
               },
               "parameters": [],
@@ -4026,6 +4476,18 @@
             {
               "type": {
                 "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "DevelopMode",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "BuiltinCommonInstructions::Once"
               },
               "parameters": [],
@@ -4036,12 +4498,93 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
                 "Shield",
                 "+",
                 "5"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Boss",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Egal"
+              },
+              "parameters": [
+                "mod(GlobalVariable(Level),5)",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "EnemyToPlayer",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy_Shoot",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PushScene"
+              },
+              "parameters": [
+                "",
+                "\"NewLevel\""
               ],
               "subInstructions": []
             }
@@ -4118,16 +4661,2178 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
         "zoomFactor": 1
       },
       "objectsGroups": [],
-      "variables": [],
-      "instances": [],
-      "objects": [],
-      "events": [],
+      "variables": [
+        {
+          "name": "AlienRight",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "BossLife",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 599,
+          "layer": "",
+          "locked": false,
+          "name": "Background",
+          "persistentUuid": "24b2ee51-7ef1-456a-91f6-56af7e817988",
+          "width": 799,
+          "x": 2,
+          "y": 0,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Player",
+          "persistentUuid": "155cc4b0-ff38-4874-9242-f35971fecec7",
+          "width": 0,
+          "x": 336,
+          "y": 512,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "GameOver",
+          "persistentUuid": "1859a282-327a-480f-bde5-4767e955a0b8",
+          "width": 0,
+          "x": 211,
+          "y": 212,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Text",
+          "locked": false,
+          "name": "LifeDisplay",
+          "persistentUuid": "dc2aacc9-3337-407c-a679-dd0777df7a85",
+          "width": 0,
+          "x": 305,
+          "y": 35,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Text",
+          "locked": false,
+          "name": "LevelDisplay",
+          "persistentUuid": "22714246-3612-4654-a5d0-1af8b93f4206",
+          "width": 0,
+          "x": 50,
+          "y": 35,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "BossLifeDisplay",
+          "persistentUuid": "030f5f79-81c0-4fe0-bc5e-6be405bfb294",
+          "width": 0,
+          "x": 600,
+          "y": 35,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "name": "Background",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "background.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alien",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "SNES-Contra3TheAlienWars-AlienShip2",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "SNES-Contra3TheAlienWars-AlienShip2-1-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BossLifeDisplay",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "[b]\n[outline=black] [shadow=red]Boss Life: [/shadow] [/outline]\n[/b]\n",
+            "opacity": 255,
+            "fontSize": 20,
+            "visible": true,
+            "color": "#ffffff",
+            "fontFamily": "Arial",
+            "align": "right",
+            "wordWrap": true
+          }
+        }
+      ],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Boss Scene",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Alien",
+                "Random(650)",
+                "-90",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "-1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "BossLife",
+                "=",
+                "100*(GlobalVariable(Level)/5)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Shield",
+                "+",
+                "5"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosY"
+              },
+              "parameters": [
+                "Alien",
+                "<",
+                "-10"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Alien",
+                "90",
+                "10",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "Alien",
+                ">",
+                "350"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "-1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "Alien",
+                "<",
+                "350"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "-1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Alien",
+                "0",
+                "-100",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Alien",
+                "0",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Alien",
+                "Bullet",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Bullet",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "BossLife",
+                "-",
+                "RandomInRange(2,10)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                "<=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Level",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PopScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Game",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "Alien",
+                "<",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Alien",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "q"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Quit"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Pause",
+                ">",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Pause",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Pause",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Pause",
+                "!=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Life",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Escape"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Pause",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "LevelDisplay",
+                "=",
+                "\"Level: \"+GlobalVariableString(Level)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "BossLifeDisplay",
+                "=",
+                "\"Boss Life: \"+VariableString(BossLife)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "\"Life: \"+ GlobalVariableString(Life)+\"\n Shield: \"+GlobalVariableString(Shield)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "<",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeTimeScale"
+              },
+              "parameters": [
+                "",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Player",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "EnemyToPlayer",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Shield",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Bullet",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy_Shoot",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "GameOver",
+                "=",
+                "\"Game Over!\nPress 'R' to restart\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "r"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "EnemyToPlayer",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Bullet",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Player",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Shield",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy_Shoot",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "=",
+                "5"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Level",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Shield",
+                "=",
+                "5"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Player",
+                "336",
+                "512",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Pause",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Immortal",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "DevelopMode",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "GameOver",
+                "=",
+                "\" \""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"StartScreen\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "Alien",
+                ">",
+                "600"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Alien",
+                "=",
+                "600"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "AlienRight",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Player",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "s"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Shield",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Shield",
+                "Player.X()",
+                "(Player.Y()-40)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Shield",
+                "-",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "PowerRez9.mp3",
+                "",
+                "5",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosY"
+              },
+              "parameters": [
+                "Player",
+                "<",
+                "420"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreY"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "420"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "Player",
+                ">",
+                "700"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "700"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "Player",
+                "<",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosY"
+              },
+              "parameters": [
+                "Player",
+                ">",
+                "520"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreY"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "520"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Player",
+                "180",
+                "400",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Up"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Player",
+                "270",
+                "400",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Down"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Player",
+                "90",
+                "400",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Right"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Player",
+                "0",
+                "400",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Return"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "0.3",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Level",
+                "<",
+                "10"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "Player.X()",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+90)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Laser-Shot.mp3",
+                "no",
+                "2",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Return"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "0.3",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Level",
+                ">=",
+                "10"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "Player.X()",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+45)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+90)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Laser-Shot.mp3",
+                "no",
+                "2",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Space"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "0.3",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Level",
+                "<",
+                "10"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "Player.X()",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+90)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Laser-Shot.mp3",
+                "no",
+                "2",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Enemy_Shoot",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Immortal",
+                "!=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "-",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "5"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Space-Cannon.mp3",
+                "",
+                "10",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Space"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "0.3",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Level",
+                ">=",
+                "10"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "Player.X()",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+45)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "(Player.X()+90)",
+                "Player.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Laser-Shot.mp3",
+                "no",
+                "2",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"FireRate\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Enemy_Shoot",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemy_Shoot",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "Bullet",
+                "270",
+                "50",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 0,
@@ -4149,6 +6854,17 @@
               "width": 0
             }
           ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 1701667143,
+          "ambientLightColorR": 134217728,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "Text",
+          "visibility": true,
+          "cameras": [],
           "effects": []
         }
       ],
