@@ -382,6 +382,24 @@
         "name": "SNES-Contra3TheAlienWars-AlienShip2-1-0.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "SNES-Contra3TheAlienWars-AlienShip2-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SNES-Contra3TheAlienWars-AlienShip2-1-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "SNES-Contra3TheAlienWars-AlienShip-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SNES-Contra3TheAlienWars-AlienShip-1.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -4238,6 +4256,18 @@
                 "\"Dev Mode\""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Level",
+                "=",
+                "4"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -4765,7 +4795,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "Text",
           "locked": false,
           "name": "BossLifeDisplay",
           "persistentUuid": "030f5f79-81c0-4fe0-bc5e-6be405bfb294",
@@ -4840,8 +4870,8 @@
                       "points": [],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 115.116455078125,
+                        "y": 88.64044189453125
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -4873,6 +4903,84 @@
             "align": "right",
             "wordWrap": true
           }
+        },
+        {
+          "name": "BossBullet",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "SNES-Contra3TheAlienWars-AlienShip2",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "SNES-Contra3TheAlienWars-AlienShip2-1-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "KillerShot",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "SNES-Contra3TheAlienWars-AlienShip",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "SNES-Contra3TheAlienWars-AlienShip-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -4942,7 +5050,7 @@
               "parameters": [
                 "BossLife",
                 "=",
-                "100*(GlobalVariable(Level)/5)"
+                "(100*(GlobalVariable(Level)/5)+1)"
               ],
               "subInstructions": []
             },
@@ -4974,7 +5082,7 @@
               "parameters": [
                 "Alien",
                 "<",
-                "-10"
+                "50"
               ],
               "subInstructions": []
             }
@@ -5239,10 +5347,274 @@
             {
               "type": {
                 "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "+",
+                "5"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Shield",
+                "*",
+                "2"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "PopScene"
               },
               "parameters": [
                 ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "2",
+                "\"EnemyCreation\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "Alien.X()",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EnemyCreation\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "BossBullet",
+                "90",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "BossBullet",
+                "Player",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "-",
+                "5"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "10",
+                "\"BossDestroy\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "KillerShot",
+                "(Alien.X()-45)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "KillerShot",
+                "(Alien.X()+45)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"BossDestroy\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "KillerShot",
+                "90",
+                "300",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "KillerShot",
+                "Player",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "-",
+                "10"
               ],
               "subInstructions": []
             }
@@ -5277,7 +5649,7 @@
               "parameters": [
                 "Alien",
                 "<",
-                "0"
+                "30"
               ],
               "subInstructions": []
             }
@@ -5291,7 +5663,7 @@
               "parameters": [
                 "Alien",
                 "=",
-                "1"
+                "30"
               ],
               "subInstructions": []
             },
@@ -5880,7 +6252,7 @@
               "parameters": [
                 "Alien",
                 ">",
-                "600"
+                "700"
               ],
               "subInstructions": []
             }
@@ -5894,7 +6266,7 @@
               "parameters": [
                 "Alien",
                 "=",
-                "600"
+                "700"
               ],
               "subInstructions": []
             },
