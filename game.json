@@ -20,7 +20,7 @@
     "author": "Francesco Galassu",
     "windowWidth": 800,
     "windowHeight": 600,
-    "latestCompilationDirectory": "/Users/francescogalassi/Desktop/new upload",
+    "latestCompilationDirectory": "/Users/francescogalassi/Desktop/game",
     "maxFPS": 60,
     "minFPS": 30,
     "verticalSync": false,
@@ -1447,7 +1447,7 @@
       "variables": [],
       "behaviors": [],
       "content": {
-        "text": "[b][outline=black][shadow=red]Scoreboard:[/shadow] [/outline] [/b]",
+        "text": "[b][outline=black][shadow=red]Scoreboard: (loading)[/shadow] [/outline] [/b]",
         "opacity": 255,
         "fontSize": 10,
         "visible": true,
@@ -1472,6 +1472,47 @@
         "fontFamily": "Arial",
         "align": "left",
         "wordWrap": false
+      }
+    },
+    {
+      "name": "StartTyping",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b][outline=black][shadow=red]Start Typing[/shadow] [/outline] [/b]",
+        "opacity": 255,
+        "fontSize": 15,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
+    },
+    {
+      "name": "NameEntry",
+      "tags": "",
+      "type": "TextEntryObject::TextEntry",
+      "variables": [],
+      "behaviors": []
+    },
+    {
+      "name": "username",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b][outline=black][shadow=red]aa[/shadow] [/outline] [/b]",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
       }
     }
   ],
@@ -3070,7 +3111,7 @@
           "variables": [],
           "behaviors": [],
           "content": {
-            "text": "[b]\n[i] \n[outline=White]\nControls Player 1:\n'W,A,S,D'  => Move\n'Space' => Shoot\n'F' => Spawn Shield\n[/outline]\n[/i]\n[/b] ",
+            "text": "[b]\n[i] \n[outline=White]\nControls Player 1:\n'W,A,S,D'  => Move\n'Space' => Shoot\n'F' => Spawn Shield\n\n'M' to Mute\n[/outline]\n[/i]\n[/b] ",
             "opacity": 255,
             "fontSize": 30,
             "visible": true,
@@ -3414,7 +3455,7 @@
           "variables": [],
           "behaviors": [],
           "content": {
-            "text": "[b]\n[i] \n[outline=White]\nControls:\n'Arrow Keys'  => Move\n'Space' or 'Enter' => Shoot\n'S' => Spawn Shield\n'R' => Restart\n[/outline]\n[/i]\n[/b] ",
+            "text": "[b]\n[i] \n[outline=White]\nControls:\n'Arrow Keys'  => Move\n'Space' or 'Enter' => Shoot\n'S' => Spawn Shield\n'R' => Restart\n\n\n'M' to Mute\n[/outline]\n[/i]\n[/b] ",
             "opacity": 255,
             "fontSize": 30,
             "visible": true,
@@ -4462,47 +4503,6 @@
               ]
             }
           ]
-        },
-        {
-          "name": "NameEntry",
-          "tags": "",
-          "type": "TextEntryObject::TextEntry",
-          "variables": [],
-          "behaviors": []
-        },
-        {
-          "name": "StartTyping",
-          "tags": "",
-          "type": "BBText::BBText",
-          "variables": [],
-          "behaviors": [],
-          "content": {
-            "text": "[b][outline=black][shadow=red]Start Typing[/shadow] [/outline] [/b]",
-            "opacity": 255,
-            "fontSize": 15,
-            "visible": true,
-            "color": "#ffffff",
-            "fontFamily": "Arial",
-            "align": "left",
-            "wordWrap": true
-          }
-        },
-        {
-          "name": "username",
-          "tags": "",
-          "type": "BBText::BBText",
-          "variables": [],
-          "behaviors": [],
-          "content": {
-            "text": "[b][outline=black][shadow=red]aa[/shadow] [/outline] [/b]",
-            "opacity": 255,
-            "fontSize": 20,
-            "visible": true,
-            "color": "#ffffff",
-            "fontFamily": "Arial",
-            "align": "left",
-            "wordWrap": true
-          }
         }
       ],
       "events": [
@@ -7205,7 +7205,7 @@
                 "value": "ModVarGlobal"
               },
               "parameters": [
-                "Life",
+                "Shield",
                 "+",
                 "\nGlobalVariable(Level)"
               ],
@@ -7336,18 +7336,6 @@
                 "value": "ModVarGlobal"
               },
               "parameters": [
-                "Life",
-                "+",
-                "GlobalVariable(Level)"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
                 "BoostEnemy",
                 "=",
                 "1"
@@ -7467,7 +7455,7 @@
                 "value": "ModVarGlobal"
               },
               "parameters": [
-                "Life",
+                "Shield",
                 "+",
                 "\nGlobalVariable(Level)"
               ],
@@ -10986,7 +10974,7 @@
               "parameters": [
                 "Life",
                 "+",
-                "2"
+                "1"
               ],
               "subInstructions": []
             },
@@ -12904,7 +12892,7 @@
               "parameters": [
                 "Level",
                 "=",
-                "36"
+                "34"
               ],
               "subInstructions": []
             }
@@ -13866,6 +13854,54 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "ScoreText",
+          "persistentUuid": "237da505-afeb-483c-8b4b-0a2336f34a93",
+          "width": 0,
+          "x": 17,
+          "y": 435,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "scoreboard",
+          "persistentUuid": "8835e500-4230-4991-b61e-1caa70e5543d",
+          "width": 0,
+          "x": 19,
+          "y": 454,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "GameOver",
+          "persistentUuid": "b59dd78f-f92d-4a1c-b3e0-a548bd370cf6",
+          "width": 0,
+          "x": 199,
+          "y": 123,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -14191,7 +14227,7 @@
               "parameters": [
                 "Alien",
                 "90",
-                "GlobalVariable(Level)",
+                "(GlobalVariable(Level)*2)",
                 ""
               ],
               "subInstructions": []
@@ -14471,6 +14507,755 @@
           "disabled": false,
           "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "0.9",
+                "\"EnemyCreation1\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "Alien.X()",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EnemyCreation1\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "3",
+                "\"EnemyCreation3\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "Alien.X()",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EnemyCreation3\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "5",
+                "\"EnemyCreation5\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "Alien.X()",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EnemyCreation5\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "7",
+                "\"EnemyCreation7\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "Alien.X()",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-30)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+30)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EnemyCreation7\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "8",
+                "\"EnemyCreation8\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "Alien.X()",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-30)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-150)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-100)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+100)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+150)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+30)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EnemyCreation8\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "9",
+                "\"EnemyCreation9\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "Alien.X()",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-150)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+150)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+30)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-30)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EnemyCreation9\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "10",
+                "\"EnemyCreation10\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "Alien.X()",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-50)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+30)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-30)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EnemyCreation10\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
             {
@@ -14566,8 +15351,379 @@
           "disabled": false,
           "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "5.1",
+                "\"BossDestroy5\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "KillerShot",
+                "(Alien.X()-45)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "KillerShot",
+                "(Alien.X()+45)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"BossDestroy5\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "6.3",
+                "\"BossDestroy6\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "KillerShot",
+                "(Alien.X()-45)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "KillerShot",
+                "(Alien.X()+45)",
+                "(Alien.Y()+50)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"BossDestroy6\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "7.2",
+                "\"BossDestroy7\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "BossLife",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+5)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+55)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "KillerShot",
+                "(Alien.X()-45)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+155)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+105)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-155)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-105)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "KillerShot",
+                "(Alien.X()+45)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-55)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()+35)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BossBullet",
+                "(Alien.X()-35)",
+                "(Alien.Y()+55)",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"BossDestroy7\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceVers"
+              },
+              "parameters": [
+                "KillerShot",
+                "Player",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceVers"
+              },
+              "parameters": [
+                "KillerShot",
+                "Player2",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            },
             {
               "type": {
                 "inverted": false,
@@ -14625,7 +15781,7 @@
               "parameters": [
                 "Life",
                 "-",
-                "5"
+                "15"
               ],
               "subInstructions": []
             },
@@ -14698,7 +15854,7 @@
               "parameters": [
                 "Life",
                 "-",
-                "5"
+                "15"
               ],
               "subInstructions": []
             },
@@ -14865,7 +16021,7 @@
               "parameters": [
                 "Life",
                 "-",
-                "10"
+                "50"
               ],
               "subInstructions": []
             },
@@ -14938,7 +16094,7 @@
               "parameters": [
                 "Life",
                 "-",
-                "10"
+                "50"
               ],
               "subInstructions": []
             },
@@ -15381,6 +16537,42 @@
             {
               "type": {
                 "inverted": false,
+                "value": "SendAsyncRequest"
+              },
+              "parameters": [
+                "\"https://www.francegala.co.uk/game/score.php\"",
+                "\"\"",
+                "\"GET\"",
+                "\"\"",
+                "Response",
+                "Error"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "scoreboard",
+                "=",
+                "VariableString(Response)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
                 "value": "BBText::SetBBText"
               },
               "parameters": [
@@ -15540,6 +16732,18 @@
                 "q"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "!=",
+                "1"
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -15672,47 +16876,6 @@
           "disabled": false,
           "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Escape"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": [],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Pause",
-                "+",
-                "1"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
             {
@@ -15801,6 +16964,17 @@
                 "value": "Delete"
               },
               "parameters": [
+                "Player2",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
                 "EnemyToPlayer",
                 ""
               ],
@@ -15853,12 +17027,513 @@
             {
               "type": {
                 "inverted": false,
+                "value": "SendAsyncRequest"
+              },
+              "parameters": [
+                "\"https://www.francegala.co.uk/game/score.php\"",
+                "\"\"",
+                "\"GET\"",
+                "\"\"",
+                "Response",
+                "Error"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "TextObject::String"
               },
               "parameters": [
                 "GameOver",
                 "=",
-                "\"Game Over!\nPress 'R' to restart\""
+                "\"Game Over!\nPress 'R' to restart\nOR Press 'P'\nto save result\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "<",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "!=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"p\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "NameEntry",
+                "333",
+                "455",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "<",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "StartTyping",
+                "333",
+                "455",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "ConfirmButton",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "username",
+                "=",
+                "\"Your Name: \"+NameEntry.String()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "username",
+                "290",
+                "380",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Life",
+                "<",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::IsBBText"
+              },
+              "parameters": [
+                "username",
+                "!=",
+                "\"Your Name: \""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "StartTyping",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "ConfirmButton",
+                "275",
+                "466",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "ConfirmButton",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": [],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "ConfirmButton",
+                    "Tween",
+                    "\"Hover\"",
+                    "1.1",
+                    "1.1",
+                    "\"bouncePast\"",
+                    "100",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": [],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "ConfirmButton",
+                    "Tween",
+                    "\"Press\"",
+                    "0.95",
+                    "0.95",
+                    "\"easeOutQuad\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": [],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "ConfirmButton",
+                    "Tween",
+                    "\"Hover\"",
+                    "1.1",
+                    "1.1",
+                    "\"bouncePast\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SendAsyncRequest"
+                  },
+                  "parameters": [
+                    "\"https://www.francegala.co.uk/game/score.php\"",
+                    "\"[\\\"\"+NameEntry.String()+\"\\\",\\\"\"+GlobalVariableString(Level)+\"\\\"]\"",
+                    "\"POST\"",
+                    "\"\"",
+                    "Response",
+                    "Error"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "SaveResult",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "ConfirmButton",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "username",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"PlayerSelection\"",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "ConfirmButton",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectScaleTween"
+              },
+              "parameters": [
+                "ConfirmButton",
+                "Tween",
+                "\"Default\"",
+                "1",
+                "1",
+                "\"bouncePast\"",
+                "100",
+                ""
               ],
               "subInstructions": []
             }
@@ -15878,6 +17553,18 @@
               "parameters": [
                 "",
                 "r"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "!=",
+                "1"
               ],
               "subInstructions": []
             },
@@ -15965,6 +17652,18 @@
               "parameters": [
                 "",
                 "\"m\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "!=",
+                "1"
               ],
               "subInstructions": []
             },
@@ -16878,6 +18577,18 @@
                 "value": "VarGlobal"
               },
               "parameters": [
+                "SaveResult",
+                "!=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
                 "Players",
                 "=",
                 "2"
@@ -17055,6 +18766,18 @@
                 "Shield",
                 ">",
                 "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "!=",
+                "1"
               ],
               "subInstructions": []
             },
@@ -18307,6 +20030,18 @@
               "parameters": [
                 "",
                 "i"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "SaveResult",
+                "!=",
+                "1"
               ],
               "subInstructions": []
             },
