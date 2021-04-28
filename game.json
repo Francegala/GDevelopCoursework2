@@ -778,6 +778,15 @@
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "userAdded": true
+      },
+      {
+        "file": "Assassin.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Assassin.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -2089,6 +2098,23 @@
           ]
         }
       ]
+    },
+    {
+      "name": "BGameObject",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "",
+        "opacity": 255,
+        "fontSize": 30,
+        "visible": true,
+        "color": "#000000",
+        "fontFamily": "Arial",
+        "align": "center",
+        "wordWrap": true
+      }
     }
   ],
   "objectsGroups": [],
@@ -2434,7 +2460,7 @@
               },
               "parameters": [
                 "",
-                "Eerie-Cyber-World.mp3"
+                "Assassin.mp3"
               ],
               "subInstructions": []
             },
@@ -2445,7 +2471,7 @@
               },
               "parameters": [
                 "",
-                "Eerie-Cyber-World.mp3",
+                "Assassin.mp3",
                 "yes",
                 "10",
                 ""
@@ -6267,7 +6293,7 @@
         "gridWidth": 8,
         "snap": false,
         "windowMask": false,
-        "zoomFactor": 1
+        "zoomFactor": 0.7084000000000003
       },
       "objectsGroups": [],
       "variables": [
@@ -6600,6 +6626,22 @@
           "x": 616,
           "y": 574,
           "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 234,
+          "layer": "",
+          "locked": false,
+          "name": "BGameObject",
+          "persistentUuid": "d510820e-ad9e-4d2c-9e80-f6d41d19ef56",
+          "width": 431,
+          "x": 210,
+          "y": 160,
+          "zOrder": 22,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -13006,10 +13048,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
                 "\"\""
               ],
@@ -13235,12 +13277,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
-                "\"Good Job!\nNew Level\""
+                "\"[b][outline=red][shadow=red]\nGood Job!\nNew Level :)\n[/shadow] [/outline] [/b]\""
               ],
               "subInstructions": []
             },
@@ -13292,10 +13334,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
                 "\"\""
               ],
@@ -13528,12 +13570,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
-                "\"Game Over!\nPress 'R' to restart\nOR Press 'P' to save result \n(if high it will be displayed)\""
+                "\"[b][outline=red][shadow=red]\nGame Over!\nPress 'R' to restart\nOR Press 'P' to save result \n(if high it will be displayed)\n[/shadow] [/outline] [/b]\""
               ],
               "subInstructions": []
             }
@@ -13645,12 +13687,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
-                "\"Game Over!\nSaving your result\""
+                "\"[b][outline=red][shadow=red]\nGame Over!\nSaving your result\n[/shadow] [/outline] [/b]\""
               ],
               "subInstructions": []
             },
@@ -14484,12 +14526,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
-                "\" \""
+                "\"\""
               ],
               "subInstructions": []
             }
@@ -14563,12 +14605,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
-                "\" \""
+                "\"\""
               ],
               "subInstructions": []
             },
@@ -14687,12 +14729,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
-                "\"Mute\""
+                "\"[b][outline=red][shadow=red]\nMute\n[/shadow] [/outline] [/b]\""
               ],
               "subInstructions": []
             }
@@ -14733,10 +14775,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
                 "\"\""
               ],
@@ -15055,12 +15097,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
-                "\"Immortal\""
+                "\"[b][outline=red][shadow=red]\nImmortal\n[/shadow] [/outline] [/b]\""
               ],
               "subInstructions": []
             }
@@ -15165,12 +15207,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
-                "\"Dev Mode\""
+                "\"[b][outline=red][shadow=red]\nDev Mode\n[/shadow] [/outline] [/b]\""
               ],
               "subInstructions": []
             },
@@ -15223,10 +15265,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
                 "\"\""
               ],
@@ -15269,10 +15311,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "TextObject::String"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "GameOver",
+                "BGameObject",
                 "=",
                 "\"\""
               ],
@@ -16159,14 +16201,6 @@
               "subInstructions": []
             }
           ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [],
           "events": []
         }
       ],
