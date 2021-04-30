@@ -2354,9 +2354,9 @@
           "locked": false,
           "name": "Welcome2",
           "persistentUuid": "e75412ce-9e02-40ce-ad8b-065404810362",
-          "width": 685,
-          "x": 60,
-          "y": 203,
+          "width": 615,
+          "x": 132,
+          "y": 202,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -2545,7 +2545,7 @@
                 "",
                 "Assassin.mp3",
                 "yes",
-                "10",
+                "50",
                 ""
               ],
               "subInstructions": []
@@ -3170,7 +3170,7 @@
               "parameters": [
                 "Welcome2",
                 "=",
-                "\"[b][outline=red][shadow=red]\nBe careful not to get hit by Asteroids! Shoot them[/shadow] [/outline] [/b]\""
+                "\"[b][outline=red][shadow=red]\nBe careful not to get hit by Asteroids!\nShoot them[/shadow] [/outline] [/b]\""
               ],
               "subInstructions": []
             },
@@ -3725,7 +3725,7 @@
               "parameters": [
                 "Welcome2",
                 "=",
-                "\"\n[b][outline=red][shadow=red]\nThis kind of Enemy if hit destroys everything around but decreases also your life\n[/shadow] [/outline] [/b]\n\""
+                "\"\n[b][outline=red][shadow=red]\nThis kind of enemy if hit destroys everything around but decreases also your life\n[/shadow] [/outline] [/b]\n\""
               ],
               "subInstructions": []
             },
@@ -3825,7 +3825,7 @@
               "parameters": [
                 "Welcome2",
                 "=",
-                "\"\n[b][outline=red][shadow=red]\nyou can create shields to protect\n[/shadow] [/outline] [/b]\n\""
+                "\"\n[b][outline=red][shadow=red]\nYou can create shields to protect your ship\n[/shadow] [/outline] [/b]\n\""
               ],
               "subInstructions": []
             },
@@ -3925,7 +3925,7 @@
               "parameters": [
                 "Welcome2",
                 "=",
-                "\"\n[b][outline=red][shadow=red]\nAllies send you bonus to increase your skills, touch/shoot them\n[/shadow] [/outline] [/b]\n\""
+                "\"\n[b][outline=red][shadow=red]\nAllies send you bonus to increase your skills,\ntouch/shoot them\n[/shadow] [/outline] [/b]\n\""
               ],
               "subInstructions": []
             },
@@ -3995,7 +3995,7 @@
               "parameters": [
                 "Welcome2",
                 "=",
-                "\"\n[b][outline=red][shadow=red]\nBosses will try to stop you\n[/shadow] [/outline] [/b]\n\""
+                "\"\n[b][outline=red][shadow=red]\nBosses will try to stop you!!\n[/shadow] [/outline] [/b]\n\""
               ],
               "subInstructions": []
             },
@@ -4204,7 +4204,7 @@
               "parameters": [
                 "Welcome2",
                 "=",
-                "\"\n[b][outline=red][shadow=red]\nHighest Scores! Try to beat them:\n[/shadow] [/outline] [/b]\n\""
+                "\"\n[b][outline=red][shadow=red]\nHighest Scores! \nTry to beat them:\n[/shadow] [/outline] [/b]\n\""
               ],
               "subInstructions": []
             }
@@ -4691,6 +4691,20 @@
                 "Stats",
                 "=",
                 "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlayMusic"
+              },
+              "parameters": [
+                "",
+                "Dark-Things.mp3",
+                "yes",
+                "100",
+                ""
               ],
               "subInstructions": []
             }
@@ -10259,7 +10273,7 @@
                 "",
                 "PowerRez9.mp3",
                 "",
-                "5",
+                "7",
                 ""
               ],
               "subInstructions": []
@@ -10352,7 +10366,7 @@
                 "",
                 "PowerRez9.mp3",
                 "",
-                "5",
+                "7",
                 ""
               ],
               "subInstructions": []
@@ -10457,7 +10471,7 @@
                 "",
                 "PowerRez9.mp3",
                 "",
-                "5",
+                "7",
                 ""
               ],
               "subInstructions": []
@@ -11368,7 +11382,7 @@
                 "",
                 "Laser-Shot.mp3",
                 "no",
-                "2",
+                "5",
                 "1"
               ],
               "subInstructions": []
@@ -11480,7 +11494,7 @@
                 "",
                 "Laser-Shot.mp3",
                 "no",
-                "2",
+                "5",
                 "1"
               ],
               "subInstructions": []
@@ -11590,7 +11604,7 @@
                 "",
                 "Laser-Shot.mp3",
                 "no",
-                "2",
+                "5",
                 "1"
               ],
               "subInstructions": []
@@ -11700,7 +11714,7 @@
                 "",
                 "Laser-Shot.mp3",
                 "no",
-                "2",
+                "5",
                 "1"
               ],
               "subInstructions": []
@@ -11824,7 +11838,7 @@
                 "",
                 "Laser-Shot.mp3",
                 "no",
-                "2",
+                "5",
                 "1"
               ],
               "subInstructions": []
@@ -11948,7 +11962,7 @@
                 "",
                 "Laser-Shot.mp3",
                 "no",
-                "2",
+                "5",
                 "1"
               ],
               "subInstructions": []
@@ -12059,6 +12073,40 @@
                 "5"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -12131,6 +12179,40 @@
                 "Score",
                 "+",
                 "5"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
               ],
               "subInstructions": []
             }
@@ -12207,6 +12289,40 @@
                 "5"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -12279,6 +12395,40 @@
                 "Score",
                 "+",
                 "5"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
               ],
               "subInstructions": []
             }
@@ -12495,6 +12645,40 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -12567,6 +12751,40 @@
                 "",
                 "10\n",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
               ],
               "subInstructions": []
             }
@@ -12643,6 +12861,40 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -12715,6 +12967,40 @@
                 "",
                 "10\n",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
               ],
               "subInstructions": []
             }
@@ -12931,6 +13217,40 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -13005,6 +13325,40 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;0;0\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "32"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -13073,6 +13427,63 @@
               "parameters": [
                 "Enemy_Shoot",
                 ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectTimer"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"lessLife\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::IsFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                ">",
+                "20"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetColor"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "\"255;255;255\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetFontSize"
+              },
+              "parameters": [
+                "LifeDisplay",
+                "=",
+                "20"
               ],
               "subInstructions": []
             }
@@ -13201,7 +13612,7 @@
                 "",
                 "The-Creeping-Blob.mp3",
                 "yes",
-                "10",
+                "100",
                 ""
               ],
               "subInstructions": []
@@ -17571,7 +17982,7 @@
                 "",
                 "Dark-Things.mp3",
                 "yes",
-                "10",
+                "100",
                 "1"
               ],
               "subInstructions": []
@@ -19184,7 +19595,7 @@
                 "",
                 "Space-Cannon.mp3",
                 "",
-                "1",
+                "5",
                 ""
               ],
               "subInstructions": []
@@ -19772,7 +20183,7 @@
                 "",
                 "The-Creeping-Blob.mp3",
                 "yes",
-                "10",
+                "100",
                 "1"
               ],
               "subInstructions": []
