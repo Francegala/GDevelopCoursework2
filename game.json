@@ -20,7 +20,7 @@
     "author": "Francesco Galassu",
     "windowWidth": 800,
     "windowHeight": 600,
-    "latestCompilationDirectory": "/Users/francescogalassi/Desktop/game",
+    "latestCompilationDirectory": "/Users/francescogalassi/Desktop/GameDev/Coursework 2/Web Executable",
     "maxFPS": 60,
     "minFPS": 30,
     "verticalSync": false,
@@ -2263,6 +2263,11 @@
     },
     {
       "name": "Stats",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "PassLevel",
       "type": "string",
       "value": ""
     }
@@ -7032,6 +7037,18 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "PassLevel",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -7103,6 +7120,18 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "PassLevel",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -7172,6 +7201,18 @@
                 "Level",
                 ">",
                 "10"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "PassLevel",
+                "=",
+                "0"
               ],
               "subInstructions": []
             }
@@ -7348,6 +7389,18 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "PassLevel",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -7432,6 +7485,18 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "PassLevel",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -7514,6 +7579,18 @@
                 "DevelopMode",
                 "!=",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "PassLevel",
+                "=",
+                "0"
               ],
               "subInstructions": []
             }
@@ -13576,6 +13653,18 @@
                 "value": "ModVarGlobal"
               },
               "parameters": [
+                "PassLevel",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
                 "Shield",
                 "=",
                 "5"
@@ -13793,47 +13882,85 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "PassLevel",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "PassLevel",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "NbObjet"
               },
               "parameters": [
                 "Enemy",
-                ""
+                "=",
+                "0"
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "NbObjet"
               },
               "parameters": [
                 "EnemyToPlayer",
-                ""
+                "=",
+                "0"
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "NbObjet"
               },
               "parameters": [
-                "Enemy_Shoot",
-                ""
+                "SpaceShip",
+                "=",
+                "0"
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "NbObjet"
               },
               "parameters": [
-                "LethalSpaceShip",
-                ""
+                "Asteroids",
+                "=",
+                "0"
               ],
               "subInstructions": []
-            },
+            }
+          ],
+          "actions": [
             {
               "type": {
                 "inverted": false,
@@ -13852,9 +13979,9 @@
                 "value": "ModVarGlobal"
               },
               "parameters": [
-                "Life",
-                "+",
-                "2"
+                "Score",
+                "=",
+                "0"
               ],
               "subInstructions": []
             },
@@ -13864,9 +13991,20 @@
                 "value": "ModVarGlobal"
               },
               "parameters": [
-                "Score",
-                "=",
-                "0"
+                "Life",
+                "+",
+                "2"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"NewLevelTimer\""
               ],
               "subInstructions": []
             },
@@ -13885,11 +14023,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ResetTimer"
+                "value": "ModVarGlobal"
               },
               "parameters": [
-                "",
-                "\"NewLevelTimer\""
+                "Level",
+                "+",
+                "1"
               ],
               "subInstructions": []
             },
@@ -13899,9 +14038,9 @@
                 "value": "ModVarGlobal"
               },
               "parameters": [
-                "Level",
-                "+",
-                "1"
+                "PassLevel",
+                "=",
+                "0"
               ],
               "subInstructions": []
             }
